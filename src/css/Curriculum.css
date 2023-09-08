@@ -1,0 +1,7 @@
+.curriculum-container{
+    position: absolute;
+    top: 100px;
+    width: 80%;
+    height: calc(100% - 100px);
+    background-color: aqua;
+}
