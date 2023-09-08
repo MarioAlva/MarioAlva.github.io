@@ -18,7 +18,7 @@ function App() {
           ))}
         </div>
         <footer className='app-footer'>
-          <div className='app-footer-curriculum' onClick={() => this.setShowCurriculum(true)}>
+          <div className='app-footer-curriculum' onClick={() => setShowCurriculum(true)}>
             Mi curriculum
           </div>
         </footer>
