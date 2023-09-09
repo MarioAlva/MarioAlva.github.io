@@ -90,26 +90,33 @@ section{
 	height: 50px;
 	border-radius: 50px;
 	color: white;
-	text-align: justify;
 	font-family: 'Bebas Neue', cursive;
 	font-size: 1.7rem;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: center;
 	position: relative;
+	cursor: pointer;
+	overflow: hidden;
+	border: 3px solid rgb(114 0 129 / 69%);
+    box-shadow: 0 0 29px 5px rgba(225, 0, 255, 0.689);
+	transition: all 0.3s ease-in-out;
 }
 .curriculum-header-contact::before{
 	content: '';
 	position: absolute;
-	width: calc(100% + 20px);
-	height: 100%;
-	left: -10px;
-	top: 0;
-	background: linear-gradient(to right, rgb(255 171 233), transparent);
-	border-radius: 50px;
-	z-index: 1;
-	transition: transform 0.5s ease-in-out;
+	width: 200%;
+	height: 0;
+	left: -50%;
+	top: 100%;
+	background: linear-gradient(to right, rgb(96, 0, 64), rgb(255, 82, 212));
+	border-radius: 50%;
+	z-index: -1;
+	transition: all 0.3s ease-in-out;
+}
+.curriculum-header-contact:hover::before{
+	top: -50%;
+	height: 300px;
 }
 .curriculum-body-top{
     width: 80%;

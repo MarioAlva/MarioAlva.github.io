@@ -11,8 +11,15 @@ export default class Curriculum extends Component{
         }
     }
     render(){
+		const scrollDown = () => {
+			document.getElementById("curriculum").scrollTo({
+				top: 1000,
+				behavior: 'smooth'
+			});
+		}
+
         return(
-            <div className="curriculum-container">
+            <div className="curriculum-container" id="curriculum">
                 <div className="curriculum">
                     <section>
                         <h1 className="curriculum-title">Mario Antonio Alva Howes</h1>
@@ -25,7 +32,9 @@ export default class Curriculum extends Component{
                                 <p>
                                 I am a <strong>responsible</strong> person, eager to work, seeking to expand my <strong>work experience</strong> while continuing my studies as a <strong>telematic engineer</strong>. I have a <strong>high capacity</strong> for learning in any environment and I <strong>excel in computer</strong> and ICT environments.
                                 </p>
-								<div className="curriculum-header-contact"></div>
+								<div onClick={() => scrollDown()} className="curriculum-header-contact">
+								Contact me
+								</div>
                             </div>
                         </div>
                     </section>
@@ -68,6 +77,7 @@ export default class Curriculum extends Component{
                     </section>
 					<section>
 						<div className="curriculum-body-bottom">
+							
 						</div>	
 					</section>
                 </div>
