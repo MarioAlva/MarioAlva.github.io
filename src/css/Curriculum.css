@@ -20,6 +20,8 @@ strong{
     flex-direction: column;
     align-items: center;
     margin-left: 5%;
+	border: 7px solid rgb(114 0 129 / 69%);
+	box-shadow: 0 0 29px 5px rgba(225, 0, 255, 0.689);
 }
 section{
     width: 90%;
@@ -51,18 +53,25 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 10px solid rgba(50, 0, 57, 0.689);
-    box-shadow: 0 0 10px 5px rgba(50, 0, 57, 0.689);
+	border: 10px solid rgb(114 0 129 / 69%);
+    box-shadow: 0 0 29px 5px rgba(225, 0, 255, 0.689);
 }
 .curriculum-image-shadow{
     position: absolute;
     width: 300px;
-    height: 200px;
-    margin-top: 60px;
-    margin-left: 10px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 5px rgb(255, 13, 195);
+    height: 120px;
+    margin-top: 100px;
+    margin-left: 0px;
+    border-radius: 51px;
+    box-shadow: 0 0 8px 5px rgb(244, 122, 255);
+    border-left: 10px solid rgb(255 171 233);
+    border-right: 10px solid rgb(255 171 233);
     animation: light-effect 5s linear infinite;
+	transition: transform 0.5s ease-in-out;
+}
+.curriculum-header-image:hover ~ .curriculum-image-shadow{
+	animation-duration: 2s;
+	transform: 
 }
 .curriculum-header-description{
     width: 50%;
@@ -74,20 +83,166 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
+	align-items: center;
+}
+.curriculum-header-contact{
+	width: 50%;
+	height: 50px;
+	border-radius: 50px;
+	color: white;
+	text-align: justify;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 1.7rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	position: relative;
+}
+.curriculum-header-contact::before{
+	content: '';
+	position: absolute;
+	width: calc(100% + 20px);
+	height: 100%;
+	left: -10px;
+	top: 0;
+	background: linear-gradient(to right, rgb(255 171 233), transparent);
+	border-radius: 50px;
+	z-index: 1;
+	transition: transform 0.5s ease-in-out;
 }
 .curriculum-body-top{
     width: 80%;
     height: 600px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+	align-items: center;
     margin-top: 100px;
+}
+.curriculum-experience-titles{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 100px;
+}
+.curriculum-experience-title{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	font-family: 'Bebas Neue', cursive;
+	position: relative;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: box-shadow 0.3s ease-in-out;
+}
+.curriculum-experience-title:hover{
+	box-shadow: 0 18px 10px -15px rgba(225, 0, 255, 0.689);
+}
+.curriculum-experience-title:nth-child(1){
+	box-shadow: 0 18px 10px -15px rgba(225, 0, 255, 0.689);
+}
+.curriculum-experience-title:nth-child(1)::before{
+	content: '';
+	position: absolute;
+	width: 80px;
+	height: 100%;
+	left: 0;
+	box-shadow: 0 18px 10px -15px rgb(244, 122, 255);
+	animation: light-effect2 3s ease-in-out infinite;
+}
+.curriculum-experience-contents{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+.curriculum-experience-content{
+	width: 80%;
+	height: 100px;
+	display: inline-flex;
+	padding: 0px 0 0px 20px;
+	border-radius: 50px;
+	overflow: hidden;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+	border: 3px solid transparent;
+}
+.curriculum-experience-content-image{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+.curriculum-experience-content-title{
+	color: #fff;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 1.5rem;
+	margin-top: 5px;
+}
+.curriculum-experience-content-years{
+	margin-left: 10px;
+	color: #ffffff80;
+}
+.curriculum-experience-content-description{
+	color: #fff;
+	margin: 0;
+	text-align: justify;
+	margin-bottom: 5px;
+}
+.curriculum-experience-content-skills-container{
+	width: 240px;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-left: 20px;
+	cursor: pointer;
+}
+.curriculum-experience-content-skills{
+	width: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to left, rgb(114 0 129 / 69%), transparent) ;
+	transition: width 0.5s ease-in-out;
+	cursor: pointer;
+	overflow: hidden;
+}
+.curriculum-experience-content:hover{
+	border: 3px solid rgb(114 0 129 / 69%);
+    box-shadow: 0 0 29px 5px rgba(225, 0, 255, 0.689);
+}
+.curriculum-experience-content:hover .curriculum-experience-content-skills{
+	width: 100%;
+}
+.curriculum-skills-button{
+	width: 30%;
+	margin-right: -18%;
 }
 
 @keyframes light-effect {
     0%{
-        transform: rotate(0deg);
+		transform: rotate(0deg);
     }
     100%{
         transform: rotate(360deg);
     }
+}
+@keyframes light-effect2 {
+	0%{
+		left: 0;
+	}
+	50%{
+		left: calc(100% - 80px)
+	}
+	100%{
+		left: 0;
+	}
 }

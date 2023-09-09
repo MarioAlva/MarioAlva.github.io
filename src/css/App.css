@@ -1,8 +1,10 @@
+body{
+	overflow-y: hidden;
+}
 .App{
   display: inline-flex;
   align-items: center;
   margin-left: max(-7%, -125px);
-  overflow: hidden;
   height: 100vh;
   background-color: black;
 }
@@ -17,6 +19,12 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
+}
+.app-body{
+	display: inline-flex;
+  	align-items: center;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 .app-footer{
   position: fixed;
