@@ -52,6 +52,7 @@ strong{
     height: 100%;
     z-index: 1000;
     overflow-y: scroll;
+	overflow-x: hidden;
     background-color: rgba(0, 0, 0, 0.6);
 }
 .curriculum{
@@ -338,7 +339,12 @@ section{
 	max-height: 70px;
 }
 .curriculum-body-bottom{
-	margin-top: 200px;
+	margin-top: 100px;
+	flex-direction: column;
+    align-items: center;
+	color: #fff;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 2.0rem;
 }
 .curriculum-skills-container{
 	width: 100%;
@@ -352,8 +358,22 @@ section{
 	width: min(500px, 35vw);
 	height: min(500px, 35vw);
 	border-radius: 50%;
+	display: flex;
 	background: rgba(114, 0, 129, 0.409);
 	box-shadow: 0 0 29px 5px rgba(225, 0, 255, 0.689);
+	position: relative;
+}
+.curriculum-skills-background{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 2.3rem;
+	color: rgb(246 182 255 / 69%);
+	z-index: 2;
 }
 .curriculum-skills-top{
 	width: 100%;
@@ -361,14 +381,20 @@ section{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	font-size: 20px;
 	z-index: 2;
 }
 .curriculum-skills-topLeft{
 	width: 40%;
 	height: 50%;
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	padding-top: 20px;
+	color: #fff;
+	font-size: 20px;
 	z-index: 2;
 }
 .curriculum-skills-bottomLeft{
@@ -376,7 +402,11 @@ section{
 	height: 70%;
 	margin-top: 30%;
 	display: flex;
+	align-items: center;
 	justify-content: center;
+	flex-direction: column;
+	color: #fff;
+	font-size: 20px;
 	z-index: 2;
 }
 .curriculum-skills-bottom{
@@ -384,15 +414,21 @@ section{
 	height: 50%;
 	margin-top: calc(50% + 20px);
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	font-size: 20px;
 	z-index: 2;
 }
 .curriculum-skills-topRight{
 	width: 40%;
 	height: 50%;
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	padding-top: 27px;
+	color: #fff;
+	font-size: 20px;
 	z-index: 2;
 }
 .curriculum-skills-bottomRight{
@@ -402,6 +438,10 @@ section{
 	margin-left: 50%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	font-size: 20px;
 	z-index: 2;
 }
 .curriculum-skills-center{
@@ -411,6 +451,9 @@ section{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	color: #fff;
+	font-size: 20px;
 	z-index: 2;
 }
 .curriculum-footer{

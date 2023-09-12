@@ -80,33 +80,55 @@ export default class Curriculum extends Component{
 						</div>
                     </section>
 					<section className="curriculum-body-bottom">
+						<h2>Skills</h2>
 						<div className="curriculum-skills-container">
 							<div className="curriculum-skills" style={{marginBottom: "-25%", display: "flex", flexWrap: "wrap", justifyContent: "space-between"}}>
 								<div className="curriculum-skills-top">
-									html
+									<span>React Native</span>
+									<span>TypeScript</span>
+									<span>MongoDB</span>
+									<span>C Basics</span>
+									<span>Flutter</span>
 								</div>
 								<div className="curriculum-skills-topLeft">
-									html
+									<span>Work in group</span>
+									<span>Java</span>
 								</div>
 								<div className="curriculum-skills-topRight">
-									html
+									<span>NodeJS</span>
+									<span>Python</span>
+									<span>Express</span>
+									<span>C#</span>
 								</div>
+								<div className="curriculum-skills-background">STUDIES</div>
 							</div>
 							<div style={{display: "flex", width: "100%", justifyContent: "center"}}>
 								<div className="curriculum-skills" style={{marginRight: "-25%", display: "flex"}}>
 									<div className="curriculum-skills-bottomLeft">
-										html
+										<span>Spring Boot</span>
+										<span>Cucumber</span>
+										<span>SCRUM</span>
+										<span>VueJS</span>
+										<span>PHP</span>
+										<span>SQL</span>
 									</div>
 									<div className="curriculum-skills-bottom">
-										html
+										<span>JavaScript</span>
 									</div>
+									<div className="curriculum-skills-background">WORK</div>
 								</div>
 								<div className="curriculum-skills">
-									<div className="curriculum-skills-bottomRight">html</div>
+									<div className="curriculum-skills-bottomRight">
+										<span>Artificial Intelligence</span>
+										<span>Unity</span>
+									</div>
+									<div className="curriculum-skills-background">PROJECTS</div>
 								</div>
 							</div>
 							<div className="curriculum-skills-center">
-								html
+								<span>HTML</span>
+								<span>CSS</span>
+								<span>Responsability</span>
 							</div>
 						</div>
 					</section>
