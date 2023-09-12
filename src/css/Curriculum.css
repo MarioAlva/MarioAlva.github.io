@@ -1,3 +1,45 @@
+/* width */
+::-webkit-scrollbar {
+	width: 7px;
+	border-radius: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #00000073;
+	border-radius: 20px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	position: absolute;
+	background: rgb(114 0 129 / 69%);
+	border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: rgb(114 0 129 / 100%);
+  }
+li{
+	position: relative;
+	font-weight: 500;
+}
+li::marker {
+	content: '● ';
+	color: rgb(192 92 255 / 52%);
+}
+li::before {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+	width: 6.5px;
+	height: 6.5px;
+	top: 50%;
+	left: -12.6px;
+    transform: translateY(calc(-50% + 2px));
+	box-shadow: 0 0 4px 2px rgb(192 92 255 / 52%);
+}
 strong{
     background: linear-gradient(to bottom, rgb(255, 82, 212), rgb(96, 0, 64));
     -webkit-background-clip: text;
@@ -14,21 +56,23 @@ strong{
 }
 .curriculum{
     background-color: rgba(0, 0, 0, 0.443);
-    width: 90%;
+    width: min(90%, 1920px);
     margin: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 5%;
+    margin-left: 50%;
+    transform: translateX(-50%);
 	border: 7px solid rgb(114 0 129 / 69%);
 	box-shadow: 0 0 29px 5px rgba(225, 0, 255, 0.689);
+	position: relative;
+	overflow: hidden;
 }
 section{
-    width: 90%;
+    width: min(80%, 1000px);
     height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 .curriculum-title{
     color: white;
@@ -40,7 +84,6 @@ section{
 .curriculum-header{
     display: flex;
     justify-content: space-between;
-    width: 80%;
     height: 300px;
 }
 .curriculum-header-image{
@@ -85,9 +128,16 @@ section{
     justify-content: center;
 	align-items: center;
 }
+.curriculum-birthday{
+	color: rgba(255, 255, 255, 0.766);
+	font-size: 1.4rem;
+	display: flex;
+	flex-direction: row-reverse;
+	margin-top: 15px;
+}
 .curriculum-header-contact{
 	width: 50%;
-	height: 50px;
+	min-height: 50px;
 	border-radius: 50px;
 	color: white;
 	font-family: 'Bebas Neue', cursive;
@@ -119,12 +169,11 @@ section{
 	height: 300px;
 }
 .curriculum-body-top{
-    width: 80%;
     height: 600px;
     display: flex;
     flex-direction: column;
 	align-items: center;
-    margin-top: 100px;
+    margin-top: 200px;
 }
 .curriculum-experience-titles{
 	display: flex;
@@ -149,10 +198,10 @@ section{
 .curriculum-experience-title:hover{
 	box-shadow: 0 18px 10px -15px rgba(225, 0, 255, 0.689);
 }
-.curriculum-experience-title:nth-child(1){
+.curriculum-experience-title-active{
 	box-shadow: 0 18px 10px -15px rgba(225, 0, 255, 0.689);
 }
-.curriculum-experience-title:nth-child(1)::before{
+.curriculum-experience-title-active::before{
 	content: '';
 	position: absolute;
 	width: 80px;
@@ -163,24 +212,37 @@ section{
 }
 .curriculum-experience-contents{
 	width: 100%;
-	height: 100%;
+	min-height: 556px;
+	margin-top: 50px;
+	display: flex;
+    overflow: hidden;
+	position: relative;	
+}
+.curriculum-experience-container{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 50px;
+	height: 100%;
+	overflow-y: scroll;
+	min-width: 100%;
+	transition: margin-left 0.5s ease-in-out;
+	position: absolute;
 }
 .curriculum-experience-content{
 	width: 80%;
-	height: 100px;
+	min-height: 100px;
+	position: relative;
 	display: inline-flex;
 	padding: 0px 0 0px 20px;
 	border-radius: 50px;
 	overflow: hidden;
+	margin: 15px 0;
 	align-items: center;
 	transition: all 0.3s ease-in-out;
 	border: 3px solid transparent;
 }
 .curriculum-experience-content-image{
+	z-index: 1;
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
@@ -201,9 +263,11 @@ section{
 	margin: 0;
 	text-align: justify;
 	margin-bottom: 5px;
+	margin-right: 20%;
 }
 .curriculum-experience-content-skills-container{
 	width: 240px;
+	position: relative;
 	height: 100%;
 	display: flex;
 	justify-content: flex-end;
@@ -212,26 +276,363 @@ section{
 	cursor: pointer;
 }
 .curriculum-experience-content-skills{
-	width: 0;
 	height: 100%;
 	display: flex;
-	justify-content: center;
+	position: absolute;
+	right: -100%;
 	align-items: center;
-	background: linear-gradient(to left, rgb(114 0 129 / 69%), transparent) ;
-	transition: width 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	cursor: pointer;
 	overflow: hidden;
+	width: 100%;
+	background: linear-gradient(to left, rgb(114 0 129 / 100%) 85%, transparent 100%);
+}
+.curriculum-skills-back{
+	position: absolute;
+	width: 40px;
+	rotate: 180deg;
+	right: 20px;
+	cursor: pointer;
 }
 .curriculum-experience-content:hover{
 	border: 3px solid rgb(114 0 129 / 69%);
     box-shadow: 0 0 29px 5px rgba(225, 0, 255, 0.689);
 }
 .curriculum-experience-content:hover .curriculum-experience-content-skills{
+	right: -85%;
+}
+.curriculum-experience-content-skills-active{
+	height: 100%;
+	display: flex;
+	position: absolute;
+	right: 0;
+	align-items: center;
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+	overflow: hidden;
 	width: 100%;
+	background: linear-gradient(to left, rgb(114 0 129 / 100%) 85%, transparent 100%);
+}
+.curriculum-experience-content:hover .curriculum-skills-button{
+	width: 40px;
 }
 .curriculum-skills-button{
-	width: 30%;
-	margin-right: -18%;
+	position: absolute;
+	left: 7%;
+	width: 0px;
+	transition: width 0.5s ease-in-out;
+	cursor: pointer;
+}
+.curriculum-experience-skills-container{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-left: calc(10% + 40px);
+}
+.curriculum-experience-skills-text{
+	color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+	max-height: 70px;
+}
+.curriculum-body-bottom{
+	margin-top: 200px;
+}
+.curriculum-skills-container{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+}
+.curriculum-skills{
+	width: min(500px, 35vw);
+	height: min(500px, 35vw);
+	border-radius: 50%;
+	background: rgba(114, 0, 129, 0.409);
+	box-shadow: 0 0 29px 5px rgba(225, 0, 255, 0.689);
+}
+.curriculum-skills-top{
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+.curriculum-skills-topLeft{
+	width: 40%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+	z-index: 2;
+}
+.curriculum-skills-bottomLeft{
+	width: 50%;
+	height: 70%;
+	margin-top: 30%;
+	display: flex;
+	justify-content: center;
+	z-index: 2;
+}
+.curriculum-skills-bottom{
+	width: 50%;
+	height: 50%;
+	margin-top: calc(50% + 20px);
+	display: flex;
+	justify-content: center;
+	z-index: 2;
+}
+.curriculum-skills-topRight{
+	width: 40%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	padding-top: 27px;
+	z-index: 2;
+}
+.curriculum-skills-bottomRight{
+	width: 50%;
+	height: 70%;
+	margin-top: 30%;
+	margin-left: 50%;
+	display: flex;
+	justify-content: center;
+	z-index: 2;
+}
+.curriculum-skills-center{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+.curriculum-footer{
+	width: min(100%, 1600px);
+	height: 32pc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 200px;
+	position: relative;
+}
+.curriculum-footer-background{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.curriculum-footer-background::after{
+	content: '';
+	position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 1600px;
+	height: 230%;
+	border-top-right-radius: 50%;
+	border-top-left-radius: 50%;
+	border-top: 5px solid rgb(114 0 129 / 69%);
+	border-left: 5px solid rgb(114 0 129 / 69%);
+	border-right: 5px solid rgb(114 0 129 / 69%);
+    box-shadow: 0 -20px 29px -10px rgba(225, 0, 255, 0.689);
+}
+.curriculum-footer-background::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-mask: url(../img/curriculumMask.svg) no-repeat center;
+	mask: url(../img/curriculumMask.svg) no-repeat center;
+	-webkit-mask-position-y: initial;
+	mask-size: cover;
+	-webkit-mask-size: cover;
+	background: linear-gradient(to bottom, rgb(114 0 129 / 69%), rgb(114 0 129 / 14%)) ;
+}
+.curriculum-footer-mail{
+	position: absolute;
+	top: 184px;
+    left: calc(50% - 323px);
+    transform: translate(-50%, -50%);
+    width: 109px;
+    height: 109px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.curriculum-footer-mail::before{
+	content: 'marioantonioalvahowes@gmail.com';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 303px;
+    height: 100%;
+    left: 100%;
+    font-size: 1.4rem;
+	color: #fff;
+	font-family: 'Bebas Neue', cursive;
+	z-index: -1;
+}
+.curriculum-footer-mail-image{
+	width: 66px;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+.curriculum-footer-mail:hover .curriculum-footer-mail-image{
+	opacity: 1;
+}
+.curriculum-footer-phone{
+	position: absolute;
+	top: 184px;
+    left: calc(50% + 124px);
+    transform: translate(-50%, -50%);
+    width: 109px;
+    height: 109px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.curriculum-footer-phone::before{
+	content: '+34 633 691 545';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 150px;
+	height: 100%;
+	left: 100%;
+	font-size: 1.4rem;
+	color: #fff;
+	font-family: 'Bebas Neue', cursive;
+	z-index: -1;
+}
+.curriculum-footer-phone-image{
+	width: 61px;
+    margin-right: 1px;
+    margin-top: 1px;
+	transition: opacity 0.3s ease-in-out;
+	opacity: 0;
+}
+.curriculum-footer-phone:hover .curriculum-footer-phone-image{
+	opacity: 1;
+}
+.curriculum-footer-linkedin{
+	position: absolute;
+    width: 58px;
+    bottom: 88px;
+    height: 58px;
+    left: calc(50% - 259px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	overflow: hidden;
+}
+.curriculum-footer-linkedin::before{
+	content: '';
+	position: absolute;
+	width: 120%;
+	height: 120%;
+	top: -100%;
+	left: 100%;
+	background: linear-gradient(to bottom, #084d92, #0a66c2);
+	border-radius: 50%;
+	z-index: -1;
+	transition: all 0.3s ease-in-out;
+}
+.curriculum-footer-linkedin:hover::before{
+	top: -10%;
+	left: -10%;
+}
+.curriculum-footer-linkedin-image{
+	width: 33px;
+    margin-right: -2px;
+    margin-top: -1px;
+	transition: opacity 0.4s ease-in-out;
+	opacity: 0;
+}
+.curriculum-footer-linkedin:hover .curriculum-footer-linkedin-image{
+	opacity: 1;
+}
+.curriculum-footer-whatsapp{
+	position: absolute;
+	width: 58px;
+    bottom: 87px;
+    height: 59px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	overflow: hidden;
+}
+.curriculum-footer-whatsapp::before{
+	content: '';
+	position: absolute;
+	width: 120%;
+	height: 120%;
+	top: -100%;
+	left: 100%;
+	background: linear-gradient(to bottom, #1c994a, #26d366);
+	border-radius: 50%;
+	z-index: -1;
+	transition: all 0.3s ease-in-out;
+}
+.curriculum-footer-whatsapp:hover::before{
+	top: -10%;
+	left: -10%;
+}
+.curriculum-footer-whatsapp-image{
+	width: 35px;
+	transition: opacity 0.4s ease-in-out;
+	opacity: 0;
+}
+.curriculum-footer-whatsapp:hover .curriculum-footer-whatsapp-image{
+	opacity: 1;
+}
+.curriculum-footer-instagram{
+	position: absolute;
+    width: 58px;
+    bottom: 89px;
+    height: 58px;
+    left: calc(50% + 196px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	overflow: hidden;
+}
+.curriculum-footer-instagram::before{
+	content: '';
+	position: absolute;
+	width: 120%;
+	height: 120%;
+	top: -100%;
+	left: 100%;
+	background: linear-gradient(20deg, #ffec53, #d5336200 44.71%),
+    			linear-gradient(127deg, #3931c5, #d53362 45.71%);
+	border-radius: 50%;
+	z-index: -1;
+	transition: all 0.3s ease-in;
+}
+.curriculum-footer-instagram:hover::before{
+	top: -10%;
+	left: -10%;
+}
+.curriculum-footer-instagram-image{
+	width: 35px;
+	transition: opacity 0.4s ease-in-out;
+	opacity: 0;
+}
+.curriculum-footer-instagram:hover .curriculum-footer-instagram-image{
+	opacity: 1;
 }
 
 @keyframes light-effect {
@@ -251,5 +652,59 @@ section{
 	}
 	100%{
 		left: 0;
+	}
+}
+
+@media (max-width: 1670px) {
+	.curriculum-footer-background::after{
+		width: 1454px;
+	}
+	.curriculum-footer-mail{
+		top: 157px;
+		left: calc(50% - 272px);
+		transform: translate(-50%, -50%);
+		width: 94px;
+		height: 94px;
+	}
+	.curriculum-footer-mail-image{
+		width: 56px;
+	}
+	.curriculum-footer-phone{
+		top: 157px;
+		left: calc(50% + 104px);
+		transform: translate(-50%, -50%);
+		width: 94px;
+		height: 94px;
+	}
+	.curriculum-footer-phone-image{
+		width: 52px;
+		margin-right: -3px;
+		margin-top: -2px;
+	}
+	.curriculum-footer-linkedin{
+		left: calc(50% - 219.5px);
+    	width: 49.5px;
+    	bottom: 152px;
+    	height: 49.5px;
+	}
+	.curriculum-footer-linkedin-image{
+		width: 29px;
+	}
+	.curriculum-footer-whatsapp{
+		width: 49.5px;
+		bottom: 151.7px;
+		height: 49.5px;
+	}
+	.curriculum-footer-whatsapp-image{
+		width: 31px;
+	}
+	.curriculum-footer-instagram{
+		left: calc(50% + 166px);
+    	width: 49.5px;
+    	bottom: 152px;
+    	height: 49.5px;
+	}
+	.curriculum-footer-instagram-image{
+		width: 31px;
 	}
 }
