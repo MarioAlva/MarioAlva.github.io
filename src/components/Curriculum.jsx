@@ -7,6 +7,10 @@ import linkedin from '../img/linkedin.svg';
 import whatsapp from '../img/whatsapp.svg';
 import instagram from '../img/instagram.svg';
 import ExperienceCard from "./ExperienceCard";
+import LanguageCard from "./LanguageCard";
+import workExperience from "../info/workExperience";
+import Language from "../info/Language";
+import studies from "../info/studies";
 
 export default class Curriculum extends Component{
     constructor(props){
@@ -59,23 +63,42 @@ export default class Curriculum extends Component{
 						</div>
 						<div className="curriculum-experience-contents">
 							<div id="experience_content" className="curriculum-experience-container" style={this.state.menu > 0 ? {marginLeft: "-105%"} : {}}>
-								<ExperienceCard />
-								<ExperienceCard />
-								<ExperienceCard />
-								<ExperienceCard />
-								<ExperienceCard />
+								{workExperience.map((experience, index) => {
+									return <ExperienceCard
+												key={index}
+												title={experience.title}
+												period={experience.period}
+												description={experience.description}
+												skills={experience.skills}
+												logo={experience.logo}
+											/>
+								})}
 							</div>
 							<div id="studies_content" className="curriculum-experience-container" style={this.state.menu > 1 ? {marginLeft: "-105%"} : this.state.menu === 1 ? {} : {marginLeft: "105%"}}>
-								<ExperienceCard />
-								<ExperienceCard />
-								<ExperienceCard />
+								{studies.map((study, index) => {
+									return <ExperienceCard
+												key={index}
+												title={study.title}
+												period={study.period}
+												description={study.description}
+												logo={study.logo}
+											/>
+								})}
 							</div>
 							<div id="languages_content" className="curriculum-experience-container" style={this.state.menu > 2 ? {marginLeft: "-105%"} : this.state.menu === 2 ? {} : {marginLeft: "105%"}}>
-								<ExperienceCard />
+								{Language.map((lang, index) => {
+									return <LanguageCard
+												key={index}
+												title={lang.title}
+												period={lang.period}
+												description={lang.description}
+												logo={lang.logo}
+											/>
+								})}
 							</div>
 							<div id="courses_content" className="curriculum-experience-container" style={this.state.menu === 3 ? {} : {marginLeft: "105%"}}>
-								<ExperienceCard />
-								<ExperienceCard />
+								{/* <ExperienceCard />
+								<ExperienceCard /> */}
 							</div>
 						</div>
                     </section>
