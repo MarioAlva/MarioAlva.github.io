@@ -1,0 +1,120 @@
+.shop-container{
+	width: min(90vw, 1300px);
+	margin-top: 439px;
+	display: inline-flex;
+}
+.shop-left{
+	width: 70%;
+}
+.shop-right{
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	margin-left: 50px;
+}
+.shop-filter-container{
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	border: 1px solid #E5E5E5;
+	align-items: center;
+	padding: 0 20px;
+}
+.shop-filter-select{
+	border: none;
+	font-size: 15px;
+	opacity: .7;
+	outline: none;
+	height: 24px;
+	cursor: pointer;
+}
+.shop-filter-select option{
+	font-size: 15px;
+	color: #777777;
+}
+.shop-title{
+	font-family: 'BebasNeue';
+	font-size: 23px;
+	font-weight: 100;
+	margin: 0;
+}
+.shop-search{
+	display: flex;
+	align-items: center;
+	border: #77777757 solid 1px;
+	padding: 5px 10px;
+	width: min(70%, 214px);
+	margin-top: 20px;
+}
+.shop-search-input{
+	border: none;
+	font-size: 15px;
+	opacity: .7;
+	outline: none;
+	height: 24px;
+	margin-left: 10px;
+	width: 100%;
+}
+.shop-filter-price-container{
+	margin-top: 40px;
+}
+.shop-categories-container{
+	margin-top: 40px;
+}
+.shop-categories{
+	margin-top: 20px;
+}
+li{
+	list-style: none;
+	margin-bottom: 10px;
+	display: flex;
+    align-items: center;
+}
+li:before{
+	content: "•";
+	color: #0D9B4D;
+	font-size: 25px;
+	margin-right: 12px;
+}
+li > span{
+	font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #676666;
+    display: flex;
+	cursor: pointer;
+	transition: color .4s;
+}
+li > span:hover{
+	color: #0D9B4D;
+}
+.shop-recently-container{
+	margin-top: 40px;
+}
+.shop-each-recently{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: 10px 0;
+	cursor: pointer;
+}
+.shop-recently-title{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    width: 188px;
+    white-space: nowrap;
+    margin: 7px 0px;
+	font-family: 'BebasNeue';
+	font-size: 22px;
+	font-weight: 100;
+	transition: color .3s;
+}
+.shop-recently-title:hover{
+	color: #FAA432;
+}
+.shop-recently-price{
+	font-size: 17px;
+    color: #0D9B4D;
+    font-weight: 700;
+    line-height: 1;
+}

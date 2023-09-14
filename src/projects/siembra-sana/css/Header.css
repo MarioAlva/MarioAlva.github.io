@@ -1,0 +1,135 @@
+.ss-header-contents{
+	width: min(1800px, 100%);
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	z-index: 100;
+}
+.ss-header-left{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: min(400px, 20vw);
+}
+.ss-header-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 89px;
+}
+.ss-header-right{
+	width: min(400px, 20vw);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.ss-header-navBar{
+	display: flex;
+	height: 100%;
+}
+.ss-header-each-navBar{
+	font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: block;
+    line-height: 1;
+    position: relative;
+    
+    text-decoration: none;
+    z-index: 1;
+}
+.ss-header-option:hover{
+	color: #FAA432;
+}
+.ss-header-option{
+	padding: 0 29px;
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	color: #777777;
+	-webkit-transition: color 0.3s ease-out 0s;
+    -moz-transition: color 0.3s ease-out 0s;
+    -ms-transition: color 0.3s ease-out 0s;
+    -o-transition: color 0.3s ease-out 0s;
+    transition: color 0.3s ease-out 0s;
+	font-weight: 700;
+}
+.ss-sidebar-button{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: #0D9B4D;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 7px 0 25px;
+	cursor: pointer;
+}
+.ss-shopping-cart{
+	cursor: pointer;
+	margin: 0 25px;
+	position: relative;
+}
+.ss-header-sidebar-container{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: #00000080;
+	visibility: hidden;
+	z-index: 101;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.7s ease-in-out;
+}
+.ss-header-sidebar{
+	position: fixed;
+	width: 30%;
+	height: 100%;
+	margin-right: -30%;
+	right: 0;
+	top: 0;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 102;
+	transition: all 0.7s ease;
+}
+.ss-header-opacity-1{
+	opacity: 1;
+	visibility: visible;
+}
+.ss-header-marginRight-0{
+	margin-right: 0;
+}
+
+.ss-header-cesta-container{
+	position: absolute;
+	visibility: hidden;
+    width: 360px;
+	opacity: 0;
+    margin-bottom: -145px;
+    margin-left: -408px;
+	transition: all 0.5s ease;
+}
+
+.ss-header-cesta{
+	width: 100%;
+	height: calc(100% - 20px);
+	margin-top: 20px;
+	background-color: #fff;
+}
+
+@keyframes opacityReverse {
+	  from {
+	visibility: visible;
+  }
+
+  to {
+	visibility: hidden;
+  }
+}

@@ -1,16 +1,35 @@
+import upc from '../img/UPC.png';
+import joan23 from '../img/joan23.png';
+
 const studies = [
     {
-        title: "Computer Science",
-        period: "2018 - 2022",
-        description: "I'm currently studying Computer Science at the University of Granada. I'm in my third year of the degree.",
-        skills: ["Java", "Cucumber", "SCRUM", "Spring Boot", "Jenkins", "Git"],
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/University_of_Granada_logo.svg/1200px-University_of_Granada_logo.svg.png"
+        title: "Telematic Engineering",
+        period: "2017 - present",
+        description: "I am currently studying Telematic Engineering at the Polytechnic University of Catalonia (UPC).",
+        skills: ["C#", "HTML", "AngularJS", "Java", "TypeScript", "MariaDB", "Python", "C Basics"],
+        logo: upc
     },
     {
         title: "High School",
-        period: "2016 - 2018",
-        description: "I studied High School at IES Alhendin, where I got the highest grade in the province of Granada.",
-        skills: ["Java", "Cucumber", "SCRUM", "Spring Boot", "Jenkins", "Git"],
-        logo: "https://www.iesalhendin.es/wp-content/uploads/2019/02/logo-ies-alhendin.png"
-    }
+        period: "2015 - 2017",
+        description: "I studied at the Joan XXIII High School in Bellvitge. I did the technologic baccalaureate.",
+        skills: ["Work in group", "Responsability", "Organization", "Technical drawing", "Maths", "Physics", "English"],
+        logo: joan23
+    },
+	{
+		title: "Middle School",
+		period: "2011 - 2015",
+		description: "I studied at the Joan XXIII Middle School in Bellvitge.",
+        skills: ["Work in group", "Responsability", "Organization", "History", "Maths", "Physics", "English"],
+		logo: joan23
+    },
+	{
+		title: "Primary School",
+		period: "2005 - 2011",
+		description: "I studied at the Joan XXIII Primary School in Bellvitge.",
+		skills: ["Work in group", "Responsability", "Organization", "Maths", "Language"],
+		logo: joan23
+	}
 ]
+
+export default studies;

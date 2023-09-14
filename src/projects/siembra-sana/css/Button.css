@@ -1,0 +1,47 @@
+.general-button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: fit-content;
+	padding: 0 50px;
+	background-color: #FAA432;
+	border-radius: 400px;
+	overflow: hidden;
+	position: relative;
+	color: white;
+	font-weight: 800;
+	z-index: 2;
+	border: 3px solid #fff;
+	cursor: pointer;
+}
+.convert-green{
+	width: 200%;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #0D9B4D;
+    position: absolute;
+    margin-top: 222px;
+	transition: all 0.4s ease-in-out;
+}
+@keyframes onButton {
+	0% {
+		margin-top: 222px;
+		height: 160px;
+	}
+	100% {
+		margin-top: 0;
+		height: 60px;
+	}	
+}
+
+@keyframes onButtonReverse {
+	0% {
+		margin-top: 0;
+		height: 60px;
+	}
+	100% {
+		margin-top: 222px;
+		height: 160px;
+	}	
+}

@@ -1,0 +1,112 @@
+.footer-container{
+	height: 600px;
+	width: 100vw;
+	background-image: url(../img/footerImage.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.footer-container::before{
+	content: "";
+	background-image: url(../img/upperWhiteShape.png);
+    position: absolute;
+    left: 0;
+	top: 0;
+    width: 100vw;
+    height: 41px;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+.footer-black-opacity{
+	background-color: #000000d8;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.footer-info-container{
+	width: min(100%, 1200px);
+	height: calc(100% - 120px);
+	display: flex;
+	justify-content: space-between;
+	margin: 100px 20px 0 0;
+}
+.footer-bottom-container{
+	width: 100%;
+	height: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	border-top: .5px solid #ffffff23;
+}
+.footer-description{
+	width: 26%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.footer-description-text{
+	color: white;
+	line-height: 1.5;
+    opacity: .7;
+	font-weight: 400;
+}
+.footer-buttons{
+	display: flex;
+}
+.footer-socialMedia-button{
+	width: 40px;
+	height: 40px;
+	margin: 0 10px;
+	border-radius: 50%;
+	background-color: #1B1B1B;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color .3s;
+	cursor: pointer;
+}
+.footer-socialMedia-button:hover{
+	background-color: #0D9B4D;
+}
+.footer-about{
+	display: flex;
+	flex-direction: column;
+}
+.footer-link{
+	margin: 10px 0;
+	color: white;
+	display: flex;
+    align-items: center;
+}
+.footer-links{
+	display: flex;
+	flex-direction: column;
+}
+.footer-contact{
+	display: flex;
+	flex-direction: column;
+}
+.footer-each-link{
+	color: white;
+	text-decoration-line: none;
+	transition: color .3s;
+}
+.footer-each-link:hover{
+	color: #0D9B4D;
+}
+.footer-address{
+	color: #ffffff;
+    opacity: .7;
+}
+.footer-bottom-text{
+	color: white;
+}
+.footer-bottom{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: min(100%, 1200px);
+}

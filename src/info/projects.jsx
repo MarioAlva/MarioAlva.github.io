@@ -8,6 +8,7 @@ import tiktok from "../img/tiktok.jpg";
 
 const projects = [
     {
+		name: "siembra-sana",
         title: "whatsapp",
         image: whatsapp,
         color: "#520000",

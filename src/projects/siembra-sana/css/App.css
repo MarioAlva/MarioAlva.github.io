@@ -1,0 +1,8 @@
+body{
+	overflow-x: hidden;
+	background-color: white;
+}
+@font-face {
+	font-family: BebasNeue;
+	src: url('../BebasNeue-Regular.woff2');
+} 

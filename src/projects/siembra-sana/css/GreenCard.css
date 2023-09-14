@@ -1,0 +1,16 @@
+.greenCard-container{
+	width: min(250px, 20vw);
+	height: auto;
+	margin: 30px 0;
+}
+.greenCard-title{
+	font-size: 20px;
+    color: #fff;
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+}
+.greenCard-description{
+	margin: 0 0;
+    color: #FFFFFF;
+	text-align: justify;
+}

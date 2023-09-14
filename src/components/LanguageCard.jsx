@@ -5,9 +5,9 @@ export default class LanguageCard extends Component{
         return(
             <div className="curriculum-experience-content">
                 <div className="curriculum-experience-content-image">
-				    <img height="100%" src={this.props.logo} alt="image" />
+				    <img height="100%" src={this.props.logo} alt="logo" />
 				</div>
-                <div className="curriculum-experience-content-info">
+				<div style={{width: "100%"}}>
 					<div style={{display: "flex", alignItems: "center"}}>
 						<span className="curriculum-experience-content-title">{this.props.title}</span>
 						<span className="curriculum-experience-content-years">- &nbsp;{this.props.period}</span>

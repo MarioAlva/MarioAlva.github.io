@@ -55,6 +55,58 @@ strong{
 	overflow-x: hidden;
     background-color: rgba(0, 0, 0, 0.6);
 }
+.curriculum-back-fixed{
+	position: absolute;
+	width: min(90%, 1920px);
+	height: 100px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	/* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.371), rgb(96, 0, 64)); */
+	background-color: rgba(255, 255, 255, 0.346);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.curriculum-back-fixed-button{
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff73;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+.curriculum-back-fixed-button:hover{
+	background-color: #ffffffb7;
+}
+.curriculum-back-scroll{
+	position: fixed;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff73;
+    top: 15px;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+	animation: curriculumClose 0.5s ease-in-out;
+}
+.curriculum-back-scroll:hover{
+	background-color: #ffffffb7;
+}
 .curriculum{
     background-color: rgba(0, 0, 0, 0.443);
     width: min(90%, 1920px);
@@ -69,7 +121,7 @@ strong{
 	position: relative;
 	overflow: hidden;
 }
-section{
+.section{
     width: min(80%, 1000px);
     height: 100%;
     display: flex;
@@ -298,6 +350,7 @@ section{
 	width: 40px;
 	rotate: 180deg;
 	right: 20px;
+	z-index: 1;
 	cursor: pointer;
 }
 .curriculum-experience-content:hover{
@@ -700,6 +753,15 @@ section{
 	}
 	100%{
 		left: 0;
+	}
+}
+
+@keyframes curriculumClose {
+	from{
+		top: -80px;
+	}
+	to{
+		top: 15px;
 	}
 }
 

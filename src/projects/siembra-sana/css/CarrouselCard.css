@@ -1,0 +1,119 @@
+.carrouselCard-container{
+	height: 500px;
+	min-width: 250px;
+	margin: 0 16px;
+	box-shadow: 0px 15px 26px rgba(173, 185, 202, 0.17);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.carrouselCard-info{
+	width: 200px;
+}
+.carrouselCard-title-container{
+	height: 85px;
+	overflow: hidden;
+}
+.carrouselCard-title{
+	font-size: 20px;
+    margin-bottom: 20px;
+	text-decoration: none;
+	color: #000000;
+	transition: color 0.3s;
+}
+.carrouselCard-title:hover{
+	color: #FAA432;
+	cursor: pointer;
+}
+.carrouselCard-image{
+	position: relative;
+	height: 250px;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+
+}
+.carrouselCard-image::before{
+	content: "";
+	position: absolute;
+	width: 100%;
+    height: 93px;
+	bottom: -27px;
+	left: 0;
+	background: #A3D86D;
+    border-radius: 50% / 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    z-index: -1;
+}
+.carrouselCard-buttons{
+	margin: 0 0 30px 0;
+}
+.carrouselCard-price-container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 10px 0;
+}
+.carrouselCard-price{
+	font-size: 20px;
+	font-weight: 650;
+}
+.carrouselCard-buttons{
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+.carrouselCard-button{
+	height: 50px;
+}
+.carrouselCard-cesta{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #0D9B4D;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.carrouselCard-stars{
+	display: flex;
+	margin-right: 3px;
+}
+.carrouselCard-star{
+	position: relative;
+	width: 15px;
+	height: 15px;
+	margin: 0 1px;
+}
+.carrouselCard-star::before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #FAA432;
+	mask: url(../img/star.png) no-repeat center;
+	-webkit-mask: url(../img/star.png) no-repeat center;
+	-webkit-mask-size: 100%;
+	mask-size: 100%;
+}
+.carrouselCard-empry-star{
+	position: relative;
+	width: 15px;
+	height: 15px;
+	margin: 0 1px;
+}
+.carrouselCard-empry-star::before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #FAA432;
+	mask: url(../img/starEmpty.png) no-repeat center;
+	-webkit-mask: url(../img/starEmpty.png) no-repeat center;
+	-webkit-mask-size: 100%;
+	mask-size: 100%;
+}
+

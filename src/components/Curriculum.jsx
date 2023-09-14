@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import ExperienceCard from "./ExperienceCard";
+import LanguageCard from "./LanguageCard";
+import workExperience from "../info/workExperience";
 import '../css/Curriculum.css';
 import photo from '../img/photo.jpg';
 import email from '../img/email.svg';
@@ -6,17 +9,16 @@ import phone from '../img/phone.svg';
 import linkedin from '../img/linkedin.svg';
 import whatsapp from '../img/whatsapp.svg';
 import instagram from '../img/instagram.svg';
-import ExperienceCard from "./ExperienceCard";
-import LanguageCard from "./LanguageCard";
-import workExperience from "../info/workExperience";
 import Language from "../info/Language";
 import studies from "../info/studies";
+import courses from "../info/courses";
 
 export default class Curriculum extends Component{
     constructor(props){
         super(props);
         this.state = {
 			menu: 0,
+			scroll: false
         }
     }
     render(){
@@ -28,10 +30,10 @@ export default class Curriculum extends Component{
 		}
 
         return(
-            <div className="curriculum-container" id="curriculum">
+            
                 <div className="curriculum">
                     <h1 className="curriculum-title">Mario Antonio Alva Howes</h1>
-                    <section className="curriculum-header">
+                    <section className="curriculum-header section">
                         <div className="curriculum-header-image">
                             <img src={photo} alt="Mario Antonio Alva Howes" />
                         </div>
@@ -46,7 +48,7 @@ export default class Curriculum extends Component{
 							</div>
                         </div>
                     </section>
-                    <section className="curriculum-body-top">
+                    <section className="curriculum-body-top section">
                         <div className="curriculum-experience-titles">
 							<div className={this.state.menu === 0 ? "curriculum-experience-title curriculum-experience-title-active" : "curriculum-experience-title"} onClick={() => this.setState({menu: 0})}>
 								<h4>work experience</h4>
@@ -81,6 +83,7 @@ export default class Curriculum extends Component{
 												title={study.title}
 												period={study.period}
 												description={study.description}
+												skills={study.skills}
 												logo={study.logo}
 											/>
 								})}
@@ -97,12 +100,19 @@ export default class Curriculum extends Component{
 								})}
 							</div>
 							<div id="courses_content" className="curriculum-experience-container" style={this.state.menu === 3 ? {} : {marginLeft: "105%"}}>
-								{/* <ExperienceCard />
-								<ExperienceCard /> */}
+								{courses.map((course, index) => {
+									return <LanguageCard
+												key={index}
+												title={course.title}
+												period={course.period}
+												description={course.description}
+												logo={course.logo}
+											/>
+								})}
 							</div>
 						</div>
                     </section>
-					<section className="curriculum-body-bottom">
+					<section className="curriculum-body-bottom section">
 						<h2>Skills</h2>
 						<div className="curriculum-skills-container">
 							<div className="curriculum-skills" style={{marginBottom: "-25%", display: "flex", flexWrap: "wrap", justifyContent: "space-between"}}>
@@ -155,7 +165,7 @@ export default class Curriculum extends Component{
 							</div>
 						</div>
 					</section>
-					<section className="curriculum-footer">
+					<section className="curriculum-footer section">
 						<div className="curriculum-footer-background"></div>
 						<div className="curriculum-footer-mail">
 							<img className="curriculum-footer-mail-image" src={email} alt="email" />
@@ -174,7 +184,6 @@ export default class Curriculum extends Component{
 						</a> 
 					</section>
                 </div>
-            </div>
         )
     }
 }

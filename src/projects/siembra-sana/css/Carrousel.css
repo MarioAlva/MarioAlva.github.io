@@ -1,0 +1,74 @@
+.carrousel-container{
+	height: 500px;
+	position: relative;
+	width: min(95vw, 1300px);
+	display: flex;
+	margin: 0 0 20px 0;
+	overflow: hidden;
+}
+.carrousel-arrow{
+	height: 100%;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.carrousel-items{
+	height: 100%;
+	width: calc(100% - 200px);
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+.carrousel-arrow-container{
+	background: #0d9b4d64;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+.carrousel-arrow-container:hover{
+	background-color: #0d9b4d;
+}
+.carrousel-rotateLeft{
+	transform: rotate(90deg);
+}
+.carrousel-rotateRight{
+	transform: rotate(-90deg);
+}
+.carrousel-points-container{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 50px 0;
+}
+.carrousel-card-container{
+	display: flex;
+	transform: translateX(-282px);
+}
+.carrousel-transition1{
+	animation: carrousel-animation1 0.5s forwards;
+}
+.carrousel-transition2{
+	animation: carrousel-animation2 0.5s forwards;
+}
+@keyframes carrousel-animation1{
+	0%{
+		transform: translateX(0);
+	}
+	100%{
+		transform: translateX(-282px);
+	}
+}
+@keyframes carrousel-animation2{
+	0%{
+		transform: translateX(-564px);
+	}
+	100%{
+		transform: translateX(-282px);
+	}
+}
