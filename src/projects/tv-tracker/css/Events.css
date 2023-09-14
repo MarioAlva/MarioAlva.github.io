@@ -1,0 +1,156 @@
+.eventscreen-container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: start;
+	flex-direction: column;
+}
+
+.eventscreen-card{
+	display: inline-flex;
+	padding: 5px;
+	border: 1px solid #3a3a3a94;
+	background-color: #242424;
+	cursor: pointer;
+	width: 100%;
+	height: 140px;
+	transition: border .2s;
+}
+
+.eventscreen-card:hover{
+	border: 1px solid #5e5e5e;
+}
+
+.eventscreen-card:active{
+	background-color: #1f1f1f;
+}
+
+.event-eventsContainer{
+	display: inline-flex;
+	width: 100%;
+	height: 85%;
+}
+
+.eventscreen-card-title{
+	font-size: 22px;
+    font-weight: 700;
+}
+
+.eventscreen-card-date{
+	float: right;
+	margin-right: 6%;
+	font-size: 14px;
+	color: #9b9b9b;
+	margin-top: 35px;
+}
+
+.eventscreen-header{
+	width: 90%;
+	height: 40vh;
+	max-height: 500px;
+	min-height: 200px;
+	background-color: aqua;
+	margin-bottom: 60px;
+}
+
+.eventscreen-titles{
+	display: inline-flex;
+	color: #ffffff;
+	font-family:fantasy;
+	font-size: 48px;
+	margin-bottom: 30px;
+	align-items: center;
+}
+
+.eventscreen-carrousel{
+	height: 200px;
+	background-color: rgb(49, 49, 49);
+	margin-bottom: 60px;
+	overflow: hidden;
+	display: -webkit-inline-box;
+	padding: 5px;
+}
+
+.eventscreen-eachEvent{
+	height: 180px;
+	width: 130px;
+	margin: 0 8px;
+	margin-top: 10px;
+	background-color: rgb(91, 91, 91);
+	transition: .2s;
+}
+
+.eventscreen-eachEvent:hover{
+	height: 200px;
+	width: 150px;
+	margin: 0px 8px 0 8px;
+	box-shadow: 0px 14px 19px 7px #242424;
+}
+
+.eventscreen-arrowCarrousel{
+	width: 5%;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.eventscreen-arrowCarrousel::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	margin-right: -5.2vw;
+    background: linear-gradient(270deg, rgba(2, 0, 36, 0) 0%, #1f1f1f9f 50%, #1F1F1F 88%);
+}
+
+.eventscreen-arrowCarrousel::after{
+	content: "";
+	width: 100%;
+	height: 100%;
+	margin-left: -154%;
+	background: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, #1F1F1F 90%);
+}
+
+.event-createEvent{
+	width: 2rem;
+    height: 2rem;
+    border-radius: 30rem;
+    font-size: 23px;
+	background-color: rgb(49, 49, 49);
+	border: 1px solid #616161;
+	color: white;
+	margin-left: 3%;
+	outline: none;
+	overflow: hidden;
+	padding-left: .5rem;
+	transition: width .2s;
+	display: flex;
+    align-items: center;
+
+}
+
+.event-createEvent:hover{
+	width: 8.4rem;
+}
+
+.event-createEvent:hover .event-createmore{
+	transform: rotate(90deg);
+}
+
+.event-createmore{
+	transition: .2s;
+}
+
+.event-createEvent:active{
+	background-color: #1f1f1f;
+}
+
+.text-createEvent{
+	white-space: nowrap;
+	font-size: 16px;
+	margin-left: .5rem;
+}
+.leaflet-container{
+	width: 100%;
+	height: 100%;
+}

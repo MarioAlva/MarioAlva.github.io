@@ -1,0 +1,17 @@
+{
+    "ConfTitle": "Configuración",
+    "ConfColour": "Cambia el tema de color:",
+    "ConfLanguage": "Idioma:",
+    "ConfEnglish": "Inglés",
+    "ConfSpanish": "Español",
+    "ConfButton": "Cambiar",
+    "SendReport": "Envia un reporte",
+    "UserReported": "Usuario a reportar:",
+    "InsertUsername": "Introduce el username del usuario a reportar",
+    "Exists": "Username introducido no existe",
+    "Reason": "Razón del reporte:",
+    "SendRepButton": "Envia el reporte",
+    "ErrorUsername": "Introduzca el username",
+    "PlaceholderReason": "Introduzca la razón del reporte",
+    "navOptions.home": "Inicio"
+}

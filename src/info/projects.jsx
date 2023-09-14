@@ -1,5 +1,5 @@
 import whatsapp from "../img/whatsapp.png";
-import facebook from "../img/facebook.png";
+import siembraSana from "../img/siembra-sana.png";
 import instagram from "../img/instagram.jpg";
 import twitter from "../img/twitter.jpg";
 import youtube from "../img/youtube.jpg";
@@ -8,14 +8,15 @@ import tiktok from "../img/tiktok.jpg";
 
 const projects = [
     {
-		name: "siembra-sana",
-        title: "whatsapp",
+        name: "tv-tracker",
+        title: "TV Tracker",
         image: whatsapp,
         color: "#520000",
     },
     {
-        title: "facebook",
-        image: facebook,
+		name: "siembra-sana",
+        title: "Siembra Sana",
+        image: siembraSana,
         color: "#523600",
     },
     {

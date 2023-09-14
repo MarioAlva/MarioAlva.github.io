@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import '../css/App.css';
 import Projects from './Projects';
 import SSHeader from '../projects/siembra-sana/components/SSheader';
@@ -10,6 +10,11 @@ import SSContact from '../projects/siembra-sana/components/Contacto';
 import SSSobreNosotros from '../projects/siembra-sana/components/Nosotros';
 import SSPrensa from '../projects/siembra-sana/components/Prensa';
 import SSProduct from '../projects/siembra-sana/components/Product';
+import TVTHome from '../projects/tv-tracker/components/Home';
+import navOptions from '../projects/tv-tracker/assets/data/navOptions';
+import Logout from '../projects/tv-tracker/assets/img/logout.png';
+import login from '../projects/tv-tracker/assets/img/login.png';
+import Logo from '../projects/tv-tracker/assets/img/logo.png';
 
 
 function App() {
@@ -27,6 +32,15 @@ function App() {
 		}
 	}
 	window.addEventListener('scroll', () => SSpop());
+
+
+	function logout(){
+		localStorage.removeItem("token");
+		window.location.assign('/login');
+	}
+  
+	const token = localStorage.getItem('token');
+	const theme = localStorage.getItem('theme') || 'dark';
   return (
 	<div className='app'>
 		{!window.location.href.endsWith("/") &&
@@ -44,8 +58,40 @@ function App() {
 		}
 		{(scrollHeader && window.location.href.includes("siembra-sana")) && <div className='ss-app-header-fixed'><SSHeader cesta={["hola", "que tal"]} /></div>}
     	
+
+		{/* TV TRACKER */}
+
+		{window.location.href.includes("tv-tracker") &&
+		<div className={`nav-container-${theme}`}>
+		<div className="nav-logo">
+				<Link to="/" key="home">
+					<img style={{marginLeft: "13px", marginTop: "20px", marginBottom: "18vh"}} width={40} src={Logo} alt="logo" />
+				</Link>
+		</div>
+		<div className="nav-options">
+		  {navOptions.map((option, index) => (
+			(option.auth === true && token) || option.auth === false  ? 
+			  <Link to={option.path} key={index}>
+			  <div className="nav-option">
+				<img className='navBar-imageOptions' src={option.icon} alt={option.name} />
+				<div className='navBar-optionName'>{option.name}</div>
+			  </div>
+			</Link> : null
+		  ))}
+		</div>
+		  {token === null ? <Link className='logOut-navBar nav-option' style={{height: "auto", padding: "10px 0"}} to="/login" key="login">
+			  <img className='navBar-imageOptions' src={login} alt="user" />
+			  <div className='navBar-optionName'>Log in</div>
+		  </Link>:	
+		  <div onClick={logout} className='logOut-navBar nav-option' style={{height: "auto", padding: "10px 0"}}>
+			  <img className='navBar-imageOptions' src={Logout} alt="user" />
+			  <div className='navBar-optionName'>Log out</div>
+		  </div>
+		  }
+		  
+	  </div>
+		}
 		
-		<BrowserRouter>
     		<Routes>
     	  		<Route path='/' element={<Projects />} />
 				<Route path='/siembra-sana' element={<SiembraSana />} />
@@ -54,8 +100,8 @@ function App() {
 				<Route path='/siembra-sana/about' element={<SSSobreNosotros />} />
 				<Route path='/siembra-sana/prensa' element={<SSPrensa />} />
 				<Route path='/siembra-sana/product' element={<SSProduct />} />
+				<Route path='/tv-tracker' element={<TVTHome />} />
     		</Routes>
-    	</BrowserRouter>
 
 		{/* SIEMBRA SANA */}
 		{window.location.href.includes("siembra-sana") &&
