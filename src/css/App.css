@@ -39,6 +39,7 @@
 .app-body{
 	display: inline-flex;
   	align-items: center;
+	padding-left: 30px;
 	overflow-x: scroll;
 	overflow-y: hidden;
 }

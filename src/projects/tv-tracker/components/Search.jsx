@@ -11,7 +11,7 @@ export default class Search extends Component {
         this.state = {
             search: '',
             filter: false,
-            filterList: [],
+            filterList: ["All"],
             info: [],
         };
     }
@@ -52,7 +52,7 @@ export default class Search extends Component {
                     <p style={{marginLeft: "5px", fontSize: "20px"}}>Filter</p>
                 </div>
                 <div className='filter-modal' style={this.state.filter ? {display: "block"} : {display: "none"}}>
-                    {this.state.filterOptions.map((option, index) => {
+                    {filterOptions.map((option, index) => {
                         return (
                             <div style={this.state.filterList.includes(option.label) && (!this.state.filterList.includes("All") || option.label === "All") ? {border: "1px solid rgb(0 52 234)"} : {border: "1px solid rgb(163, 163, 163)"}} key={index} onClick={(e) => {
 								if (!this.state.filterList.includes(option.label)) {
@@ -73,13 +73,13 @@ export default class Search extends Component {
                 </div>
             </div>
             <div className='series-container'>
-                {filteredInfo.map((item, index) => {
+                {/* {filteredInfo.map((item, index) => {
                     return (
                         <div onClick={() => clickSerie(index)} className='series-one' key={index}>
                             <img height="100%" src={item.poster_path + ''} alt="series" />
                         </div>
                     )
-                })}
+                })} */}
             </div>
         </div>
     )

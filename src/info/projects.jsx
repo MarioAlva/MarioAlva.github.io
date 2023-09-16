@@ -1,5 +1,6 @@
 import whatsapp from "../img/whatsapp.png";
 import siembraSana from "../img/siembra-sana.png";
+import tvTracker from "../img/tv-tracker.png";
 import instagram from "../img/instagram.jpg";
 import twitter from "../img/twitter.jpg";
 import youtube from "../img/youtube.jpg";
@@ -10,7 +11,7 @@ const projects = [
     {
         name: "tv-tracker",
         title: "TV Tracker",
-        image: whatsapp,
+        image: tvTracker,
         color: "#520000",
     },
     {

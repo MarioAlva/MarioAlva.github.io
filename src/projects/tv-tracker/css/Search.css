@@ -1,5 +1,9 @@
 .search-container{
-    width: calc(100% - 38px);
+    width: calc(100% - 170px);
+	margin-left: 70px;
+	padding: 50px;
+	height: calc(100vh - 100px);
+	background-color: #1F1F1F;
 }
 .search-container input{
     width: calc(100% - 300px);

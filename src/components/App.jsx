@@ -11,6 +11,10 @@ import SSSobreNosotros from '../projects/siembra-sana/components/Nosotros';
 import SSPrensa from '../projects/siembra-sana/components/Prensa';
 import SSProduct from '../projects/siembra-sana/components/Product';
 import TVTHome from '../projects/tv-tracker/components/Home';
+import TVTProfile from '../projects/tv-tracker/components/Profile';
+import TVTSearch from '../projects/tv-tracker/components/Search';
+import TVTEvents from '../projects/tv-tracker/components/Events';
+import TVTConfiguration from '../projects/tv-tracker/components/Configuration';
 import navOptions from '../projects/tv-tracker/assets/data/navOptions';
 import Logout from '../projects/tv-tracker/assets/img/logout.png';
 import login from '../projects/tv-tracker/assets/img/login.png';
@@ -71,7 +75,7 @@ function App() {
 		<div className="nav-options">
 		  {navOptions.map((option, index) => (
 			(option.auth === true && token) || option.auth === false  ? 
-			  <Link to={option.path} key={index}>
+			  <Link to={"/tv-tracker" + option.path} key={index}>
 			  <div className="nav-option">
 				<img className='navBar-imageOptions' src={option.icon} alt={option.name} />
 				<div className='navBar-optionName'>{option.name}</div>
@@ -101,6 +105,10 @@ function App() {
 				<Route path='/siembra-sana/prensa' element={<SSPrensa />} />
 				<Route path='/siembra-sana/product' element={<SSProduct />} />
 				<Route path='/tv-tracker' element={<TVTHome />} />
+				<Route path='/tv-tracker/profile/:id' element={<TVTProfile />} />
+				<Route path='/tv-tracker/search' element={<TVTSearch />} />
+				<Route path='/tv-tracker/event' element={<TVTEvents />} />
+				<Route path='/tv-tracker/config' element={<TVTConfiguration />} />
     		</Routes>
 
 		{/* SIEMBRA SANA */}

@@ -73,7 +73,7 @@ export default class Events extends Component {
     					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   					/>
 					{this.state.eventList.map((event) => (
-					<Marker icon={iconPerson} position={[event.lat, event.lng]}>
+					<Marker icon={iconPerson} position={[0, 0]}>
     					<Popup>
      						A pretty CSS3 popup. <br /> Easily customizable.
     					</Popup>
